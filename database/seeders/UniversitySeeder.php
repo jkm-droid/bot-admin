@@ -44,7 +44,7 @@ class UniversitySeeder extends Seeder
             $bot_id = Bot::pluck('id')->random();
             DB::table('universities')->insert([
                 'bot_id' => $bot_id,
-                'university_name' => $university,
+                'name' => $university,
                 'country' => $faker->randomElement(["Saudi Arabia","USA","Israel"]),
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),

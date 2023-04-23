@@ -52,7 +52,7 @@ class HeadingSeeder extends Seeder
             $bot_id = Bot::pluck('id')->random();
             DB::table('headings')->insert([
                 'bot_id' => $bot_id,
-                'heading_name' => $heading,
+                'name' => $heading,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ]);

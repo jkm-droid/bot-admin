@@ -16,7 +16,7 @@ class CreateSlogansTable extends Migration
         Schema::create('slogans', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('bot_id');
-            $table->string('slogan_name');
+            $table->string('name');
             $table->timestamps();
 
             $table->foreign('bot_id')->references('id')->on('bots');

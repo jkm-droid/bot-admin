@@ -17,7 +17,7 @@ class UserSeeder extends Seeder
     public function run()
     {
         $faker = Faker::create('App\User');
-        for($u = 0;$u <=5;$u++){
+        for($u = 0;$u <=3;$u++){
             DB::table('users')->insert([
                 'username' => $faker->name(),
                 'email' => $faker->unique()->safeEmail(),

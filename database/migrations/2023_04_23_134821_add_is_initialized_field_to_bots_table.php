@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateHeadingsTable extends Migration
+class AddIsInitializedFieldToBotsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,8 @@ class CreateHeadingsTable extends Migration
      */
     public function up()
     {
-        Schema::create('headings', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('bot_id');
-            $table->string('name');
-            $table->timestamps();
-
-            $table->foreign('bot_id')->references('id')->on('bots');
+        Schema::table('bots', function (Blueprint $table) {
+            $table->boolean('is_initialized')->default(0);
         });
     }
 
@@ -30,6 +25,8 @@ class CreateHeadingsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('headings');
+        Schema::table('bots', function (Blueprint $table) {
+            $table->dropColumn("is_initialized");
+        });
     }
 }

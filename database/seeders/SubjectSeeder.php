@@ -62,7 +62,7 @@ class SubjectSeeder extends Seeder
             $bot_id = Bot::pluck('id')->random();
             DB::table('subjects')->insert([
                 'bot_id' => $bot_id,
-                'subject_name' => $subject,
+                'name' => $subject,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ]);

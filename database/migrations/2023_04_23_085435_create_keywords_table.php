@@ -16,7 +16,7 @@ class CreateKeywordsTable extends Migration
         Schema::create('keywords', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('bot_id');
-            $table->string('keyword_name');
+            $table->string('name');
             $table->timestamps();
 
             $table->foreign('bot_id')->references('id')->on('bots');

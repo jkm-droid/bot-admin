@@ -53,7 +53,7 @@ class KeywordSeeder extends Seeder
             $bot_id = Bot::pluck('id')->random();
             DB::table('keywords')->insert([
                 'bot_id' => $bot_id,
-                'keyword_name' => $keyword,
+                'name' => $keyword,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ]);

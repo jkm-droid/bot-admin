@@ -22,7 +22,7 @@ class HashtagSeeder extends Seeder
             $bot_id = Bot::pluck('id')->random();
             DB::table('hashtags')->insert([
                 'bot_id' => $bot_id,
-                'hashtag_name' => $faker->word(),
+                'name' => $faker->word(),
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ]);

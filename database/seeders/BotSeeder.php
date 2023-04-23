@@ -17,7 +17,7 @@ class BotSeeder extends Seeder
      */
     public function run()
     {
-        for ($b = 0;$b <= 15;$b++){
+        for ($b = 1;$b <= 4;$b++){
             $user = User::pluck('id')->random();
             DB::table('bots')->insert([
                 'user_id' => $user,

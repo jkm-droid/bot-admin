@@ -28,7 +28,7 @@ class SloganSeeder extends Seeder
             $bot_id = Bot::pluck('id')->random();
             DB::table('slogans')->insert([
                 'bot_id' => $bot_id,
-                'slogan_name' => $slogan,
+                'name' => $slogan,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ]);
