@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg fixed-top" id="navbar" style="background-color: black">
     <div class="container-fluid">
-        <a class="navbar-brand put-gold" href="/">Tips Api</a>
+        <a class="navbar-brand put-gold" href="/">Bot Admin</a>
         <button class="navbar-toggler" style="color: goldenrod" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon" style="color: goldenrod"><i class="fa fa-list"></i></span>
         </button>

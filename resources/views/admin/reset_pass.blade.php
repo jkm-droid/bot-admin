@@ -3,7 +3,7 @@
 @section('content')
     <div class="auth-box container col-md-3">
         <div style="padding: 5px;">
-            <h3 class="put-black text-center"><a href="/" class="h3">AISCA</a></h3>
+            <h3 class="put-black text-center"><a href="/" class="h3">Bot Admin</a></h3>
 
         <h5 class="text-center">Reset your password</h5>
 

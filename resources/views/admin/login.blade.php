@@ -6,7 +6,7 @@
         <!-- /.login-logo -->
         <div class="">
 
-            <h3 class="put-black text-center"><a href="/" class="h3">Tips Api Portal</a></h3>
+            <h3 class="put-black text-center"><a href="/" class="h3">Bot Admin</a></h3>
 
             @if ($message = Session::get('success'))
                 <p class="alert alert-success">{{ $message }}</p>

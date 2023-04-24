@@ -3,7 +3,7 @@
 @section('content')
     <div class="auth-box container col-md-3">
         <div class="text-center" style="padding: 5px;">
-            <h3 class="put-black"><a href="/">AISCA</a></h3>
+            <h3 class="put-black"><a href="/">Bot Admin</a></h3>
 
             @if ($message = Session::get('success'))
                 <p class="alert alert-success">{{ $message }}</p>

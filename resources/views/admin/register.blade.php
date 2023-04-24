@@ -4,7 +4,7 @@
     <div class="auth-box container col-md-3">
         <div class="">
 
-            <h3 class="put-black text-center"><a href="/" class="h3">Tips Api Portal</a></h3>
+            <h3 class="put-black text-center"><a href="/" class="h3">Bot Admin</a></h3>
 
             <h5 class="login-box-msg text-center">Sign up to start your session</h5>
             @if ($message = Session::get('error'))
