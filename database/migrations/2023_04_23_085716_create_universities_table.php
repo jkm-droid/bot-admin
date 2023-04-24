@@ -19,8 +19,6 @@ class CreateUniversitiesTable extends Migration
             $table->string('name');
             $table->string('country');
             $table->timestamps();
-
-            $table->foreign('bot_id')->references('id')->on('bots');
         });
     }
 

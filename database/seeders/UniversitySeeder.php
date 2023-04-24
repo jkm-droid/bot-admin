@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Bot;
+use App\Models\University;
 use Carbon\Carbon;
 use Faker\Factory as Faker;
 use Illuminate\Database\Seeder;
@@ -39,6 +40,8 @@ class UniversitySeeder extends Seeder
             "Emory University",
             "Rice University",
         ];
+        University::truncate();
+
         $faker = Faker::create('App\University');
         foreach ($universities as $university){
             $bot_id = Bot::pluck('id')->random();

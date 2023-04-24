@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Bot;
 use App\Models\User;
 use Carbon\Carbon;
 use Faker\Factory as Faker;
@@ -17,11 +18,16 @@ class BotSeeder extends Seeder
      */
     public function run()
     {
-        for ($b = 1;$b <= 4;$b++){
+        Bot::truncate();
+
+        $faker = Faker::create('App\Bot');
+        for ($b = 1;$b <= 10;$b++){
             $user = User::pluck('id')->random();
+            $type = $faker->randomElement(['reddit','twitter']);
             DB::table('bots')->insert([
                 'user_id' => $user,
-                'bot_name' => 'twitter-bot-'.$user,
+                'bot_name' => $type.'-bot-'.$user,
+                'type' => $type,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ]);

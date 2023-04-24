@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Bot;
+use App\Models\Hashtag;
 use Carbon\Carbon;
 use Faker\Factory as Faker;
 use Illuminate\Database\Seeder;
@@ -17,6 +18,8 @@ class HashtagSeeder extends Seeder
      */
     public function run()
     {
+        Hashtag::truncate();
+
         $faker = Faker::create('App\Hashtag');
         for($h = 0;$h <=30;$h++){
             $bot_id = Bot::pluck('id')->random();

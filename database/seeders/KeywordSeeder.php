@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Bot;
+use App\Models\Keyword;
 use Carbon\Carbon;
 use Faker\Factory as Faker;
 use Illuminate\Database\Seeder;
@@ -49,11 +50,16 @@ class KeywordSeeder extends Seeder
             "English class",
             "philosophy"
         ];
+        Keyword::truncate();
+
+        $faker = Faker::create('App\Keyword');
         foreach ($keywords as $keyword){
             $bot_id = Bot::pluck('id')->random();
+            $type = $faker->randomElement(['reddit','twitter']);
             DB::table('keywords')->insert([
                 'bot_id' => $bot_id,
                 'name' => $keyword,
+                'type' => $type,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ]);

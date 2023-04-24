@@ -19,8 +19,6 @@ class CreateBotsTable extends Migration
             $table->string('bot_name');
             $table->boolean('is_active')->default(1);
             $table->timestamps();
-
-            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

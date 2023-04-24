@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Bot;
+use App\Models\Subject;
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -58,6 +59,7 @@ class SubjectSeeder extends Seeder
             "Course Modules",
             "Coding projects",
         ];
+        Subject::truncate();
         foreach ($subjects as $subject){
             $bot_id = Bot::pluck('id')->random();
             DB::table('subjects')->insert([

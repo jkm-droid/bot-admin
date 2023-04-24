@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Bot;
+use App\Models\SubReddit;
 use Carbon\Carbon;
 use Faker\Factory as Faker;
 use Illuminate\Database\Seeder;
@@ -17,6 +18,8 @@ class SubRedditSeeder extends Seeder
      */
     public function run()
     {
+        SubReddit::truncate();
+
         $faker = Faker::create('App\SubReddit');
         for ($sb = 0;$sb <=50;$sb++){
             $bot = Bot::pluck('id')->random();

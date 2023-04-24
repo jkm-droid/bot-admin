@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Bot;
+use App\Models\Slogan;
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -24,6 +25,8 @@ class SloganSeeder extends Seeder
             "We deliver the best services in:",
             "For quality results DM us today",
         ];
+        Slogan::truncate();
+
         foreach ($slogans as $slogan){
             $bot_id = Bot::pluck('id')->random();
             DB::table('slogans')->insert([

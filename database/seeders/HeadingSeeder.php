@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 use App\Models\Bot;
+use App\Models\Hashtag;
+use App\Models\Heading;
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -16,6 +18,8 @@ class HeadingSeeder extends Seeder
      */
     public function run()
     {
+        Heading::truncate();
+
         $headings = [
             "Need help with your homework? DM us.",
             "We will do your assignments at reasonable rates.",
