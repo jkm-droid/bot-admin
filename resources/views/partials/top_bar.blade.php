@@ -39,7 +39,7 @@
                 <i class="fas fa-bell fa-fw"></i>
                 <!-- Counter - Alerts -->
                 <span class="badge badge-danger badge-counter">
-                    {{ count(Auth::guard('admin')->user()->unreadNotifications) }}
+{{--                    {{ count(Auth::guard('admin')->user()->unreadNotifications) }}--}}
                 </span>
             </a>
             <!-- Dropdown - Alerts -->

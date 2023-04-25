@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Services\Admin\AdminService;
+use App\Services\Admin\AdminAuthService;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -12,11 +12,11 @@ use Illuminate\Http\Request;
 class AdminAuthController extends Controller
 {
     /**
-     * @var AdminService
+     * @var AdminAuthService
      */
     private $_adminService;
 
-    public function __construct(AdminService $adminService)
+    public function __construct(AdminAuthService $adminService)
     {
         $this->middleware('guest:admin')->except('signOutAdmin');
         $this->_adminService = $adminService;

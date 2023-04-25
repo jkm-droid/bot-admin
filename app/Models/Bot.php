@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Bot extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'user_id',
+        'bot_name',
+        'type',
+        'is_active'
+    ];
 }

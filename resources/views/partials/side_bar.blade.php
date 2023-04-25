@@ -32,22 +32,15 @@
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#MyContributions"
            aria-expanded="true" aria-controls="collapseTwo">
             <i class="fas fa-fw fa-coins"></i>
-            <span>Tips</span>
+            <span>Bots</span>
         </a>
         <div id="MyContributions" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Action</h6>
-                <a class="collapse-item" href="{{ route('tip.show.create.form') }}">Add New</a>
-                <a class="collapse-item" href="{{ route('tip.all') }}">View All</a>
+                <a class="collapse-item" href="{{ route('bot.create.form') }}">Add New</a>
+{{--                <a class="collapse-item" href="{{ route('tip.all') }}">View All</a>--}}
             </div>
         </div>
-    </li>
-
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="{{ route('notifications') }}" aria-expanded="true" aria-controls="collapseUtilities">
-            <i class="fas fa-fw fa-bell"></i>
-            <span>Notifications</span>
-        </a>
     </li>
 
     <!-- Divider -->
