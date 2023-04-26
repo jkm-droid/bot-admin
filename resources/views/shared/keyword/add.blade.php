@@ -7,39 +7,41 @@
             <li class="breadcrumb-item">
                     <a href="{{ route('dashboard') }}">Dashboard</a>
             </li>
-            <li class="breadcrumb-item active" aria-current="page">Add Bot</li>
+            <li class="breadcrumb-item active" aria-current="page">Add Keyword</li>
         </ol>
     </div>
 
     <div class="col-md-12">
-        <form action="{{ route('bot.create') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('keyword.create') }}" method="POST" enctype="multipart/form-data">
 
             @csrf
-
             <div class="row">
                 <div class="col-md-6 mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Bot Name</label>
-                    <input type="text" name="bot_name" class="form-control" value="{{ old('bot_name') }}" placeholder="Name" aria-label="Reference Number">
-                    @if ($errors->has('bot_name'))
-                        <div class="text-danger form-text"><small>{{ $errors->first('bot_name') }}</small></div>
-                    @endif
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-6 mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">Type</label>
-                    <select class="form-select form-control" name="type" aria-label="Default select example">
-                        <option disabled selected>Select bot type</option>
-                        <option name="reddit" value="reddit">Reddit</option>
-                        <option name="twitter" value="twitter">Twitter</option>
+                    <label for="exampleFormControlTextarea1" class="form-label">Bot</label>
+                    <select class="form-select form-control" name="bot_id" aria-label="Default select example">
+                        <option disabled selected>Select bot</option>
+                        @foreach($bots as $bot)
+                            <option name="{{ $bot->bot_name }}" value="{{ $bot->id }}">{{ $bot->bot_name }}</option>
+                        @endforeach
                     </select>
-                    @if ($errors->has('type'))
-                        <div class="text-danger form-text"><small>{{ $errors->first('type') }}</small></div>
+                    @if ($errors->has('bot_id'))
+                        <div class="text-danger form-text"><small>{{ $errors->first('bot_id') }}</small></div>
                     @endif
                 </div>
             </div>
-            <button type="submit" class="btn btn-secondary">Add Bot</button>
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Keyword(s)</label>
+                    <textarea type="text" name="keyword_names" class="form-control" rows="2" placeholder="Add keywords separated by comma"></textarea>
+                    @if ($errors->has('keyword_names'))
+                        <div class="text-danger form-text"><small>{{ $errors->first('keyword_names') }}</small></div>
+                    @endif
+                </div>
+            </div>
+
+
+            <button type="submit" class="btn btn-secondary">Add Keyword(s)</button>
         </form>
     </div>
 @endsection
