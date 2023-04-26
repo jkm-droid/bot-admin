@@ -21,4 +21,5 @@ Route::get('/', function () {
 Route::name('bot.')->group(function (){
     Route::get('create/bot', [BotController::class, 'showBotCreationPage'])->name('create.form');
     Route::post('create', [BotController::class, 'createBot'])->name('create');
+    Route::get('bots/index', [BotController::class, 'getBots'])->name('index');
 });

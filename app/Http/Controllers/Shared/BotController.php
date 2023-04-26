@@ -15,6 +15,7 @@ class BotController extends Controller
 
     public function __construct(BotService $botService)
     {
+        $this->middleware('auth:admin');
         $this->_botService = $botService;
     }
 
@@ -26,5 +27,10 @@ class BotController extends Controller
     public function createBot(Request $request)
     {
         return $this->_botService->createBot($request);
+    }
+
+    public function getBots()
+    {
+        return $this->_botService->getAllBots();
     }
 }

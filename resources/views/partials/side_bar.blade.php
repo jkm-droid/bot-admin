@@ -38,7 +38,7 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Action</h6>
                 <a class="collapse-item" href="{{ route('bot.create.form') }}">Add New</a>
-{{--                <a class="collapse-item" href="{{ route('tip.all') }}">View All</a>--}}
+                <a class="collapse-item" href="{{ route('bot.index') }}">View All</a>
             </div>
         </div>
     </li>
