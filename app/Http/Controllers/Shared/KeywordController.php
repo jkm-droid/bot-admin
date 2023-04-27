@@ -34,4 +34,9 @@ class KeywordController extends Controller
     {
         return $this->_keywordService->getAllKeywords();
     }
+
+    public function deleteKeyword($keywordId)
+    {
+        return $this->_keywordService->deleteKeyword($keywordId);
+    }
 }

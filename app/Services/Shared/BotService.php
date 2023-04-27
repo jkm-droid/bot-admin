@@ -32,4 +32,22 @@ class BotService
         $bots = Bot::orderBy('created_at', 'desc')->paginate(10);
         return view('shared.bot.index',compact('bots'));
     }
+
+    public function deleteBot($id)
+    {
+        $bot = Bot::where('id',$id)->first();
+        $bot->delete();
+        return redirect()
+            ->route('bot.index')
+            ->with('success', 'Bot deleted successfully');
+    }
+
+    public function botParameters($id, $type)
+    {
+            $bot = Bot::where('id',$id)
+                ->where('type',$type)
+                ->first();
+
+        return view('shared.bot.parameters')->with('bot',$bot);
+    }
 }

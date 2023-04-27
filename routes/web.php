@@ -23,10 +23,13 @@ Route::name('bot.')->group(function (){
     Route::get('create/bot', [BotController::class, 'showBotCreationPage'])->name('create.form');
     Route::post('create', [BotController::class, 'createBot'])->name('create');
     Route::get('bots/index', [BotController::class, 'getBots'])->name('index');
+    Route::delete('bot/delete/{botId}', [BotController::class, 'deleteBot'])->name('delete');
+    Route::get('bot/{id}/parameters/{type}', [BotController::class, 'getBotParameters'])->name('parameters');
 });
 
 Route::name('keyword.')->group(function (){
     Route::get('create/keyword', [KeywordController::class, 'showKeywordCreationPage'])->name('create.form');
     Route::post('create', [KeywordController::class, 'createKeyword'])->name('create');
     Route::get('keywords/index', [KeywordController::class, 'getKeywords'])->name('index');
+    Route::delete('keyword/delete/{keywordId}', [KeywordController::class, 'deleteKeyword'])->name('delete');
 });

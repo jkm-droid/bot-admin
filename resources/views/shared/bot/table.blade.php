@@ -25,11 +25,18 @@
         <tbody>
         @foreach($bots as $bot)
             <tr>
-                <td>{{ $bot->bot_name }}</td>
+                <td><a href="{{ route('bot.parameters',[$bot->id,$bot->type]) }}">{{ $bot->bot_name }}</a></td>
                 <td>{{ $bot->type }}</td>
                 <td>{{ $bot->is_active }}</td>
                 <td>{{ $bot->is_initialized }}</td>
                 <td>{{ $bot->created_at }}</td>
+                <td>
+                    <form action="{{ route("bot.delete", $bot->id) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <input type="submit" name="delete_bot" value="delete">
+                    </form>
+                </td>
             </tr>
         @endforeach
         </tbody>

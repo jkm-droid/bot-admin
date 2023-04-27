@@ -12,10 +12,6 @@
     </div>
 
     <div class="col-md-12">
-        @if(count($bots) > 0)
-            @include('shared.bot.table')
-        @else
-            <p class="text-center text-danger">No bots found</p>
-        @endif
+        {{ $bot->keywords }}
     </div>
 @endsection

@@ -33,4 +33,14 @@ class BotController extends Controller
     {
         return $this->_botService->getAllBots();
     }
+
+    public function deleteBot($botId)
+    {
+        return $this->_botService->deleteBot($botId);
+    }
+
+    public function getBotParameters($botId, $botType)
+    {
+        return $this->_botService->botParameters($botId,$botType);
+    }
 }

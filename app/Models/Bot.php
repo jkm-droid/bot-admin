@@ -38,12 +38,82 @@ class Bot extends Model
     }
 
     /**
+     * Get the sub-reddits owned by this bot
+     *
+     * @return HasMany
+     */
+    public function subreddits()
+    {
+        return $this->hasMany(SubReddit::class);
+    }
+
+    /**
+     * Get the submissions owned by this bot
+     *
+     * @return HasMany
+     */
+    public function submissions()
+    {
+        return $this->hasMany(Submission::class);
+    }
+
+    /**
+     * Get the comments owned by this bot
+     *
+     * @return HasMany
+     */
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
+    /**
+     * Get the hashtags owned by this bot
+     *
+     * @return HasMany
+     */
+    public function hashtags()
+    {
+        return $this->hasMany(Hashtag::class);
+    }
+
+    /**
+     * Get the headings owned by this bot
+     *
+     * @return HasMany
+     */
+    public function headings()
+    {
+        return $this->hasMany(Heading::class);
+    }
+
+    /**
+     * Get the slogans owned by this bot
+     *
+     * @return HasMany
+     */
+    public function slogans()
+    {
+        return $this->hasMany(Slogan::class);
+    }
+
+    /**
+     * Get the universities owned by this bot
+     *
+     * @return HasMany
+     */
+    public function universities()
+    {
+        return $this->hasMany(University::class);
+    }
+
+    /**
      * Get the subjects owned by this bot
      *
      * @return HasMany
      */
     public function subjects()
     {
-        return $this->hasMany(Keyword::class);
+        return $this->hasMany(Subject::class);
     }
 }

@@ -44,4 +44,13 @@ class KeywordService
         $keywords = Keyword::orderBy('created_at', 'desc')->paginate(10);
         return view('shared.keyword.index', compact('keywords'));
     }
+
+    public function deleteKeyword($keywordId)
+    {
+        $keyword = Keyword::where('id',$keywordId)->first();
+        $keyword->delete();
+        return redirect()
+            ->route('keyword.index')
+            ->with('success', 'Keyword deleted successfully');
+    }
 }
