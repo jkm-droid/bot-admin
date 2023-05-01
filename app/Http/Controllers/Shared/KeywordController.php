@@ -39,4 +39,8 @@ class KeywordController extends Controller
     {
         return $this->_keywordService->deleteKeyword($keywordId);
     }
+    public function deleteBatchKeywords(Request $request)
+    {
+        return $this->_keywordService->batchDeleteKeywords($request);
+    }
 }

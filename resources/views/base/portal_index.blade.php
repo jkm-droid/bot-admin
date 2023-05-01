@@ -20,12 +20,6 @@
     <link rel="stylesheet" href="{{ asset('css/main-style.css') }}">
 
     <!--- toast section---->
-    <!-- Core Stylesheet -->
-    <link rel="stylesheet" href="{{ asset('toast/css/eggy.css') }}" />
-    <!-- Progressbar Styles -->
-    <link rel="stylesheet" href="{{ asset('toast/css/progressbar.css') }}" />
-    <!-- Themes -->
-    <link rel="stylesheet" href="{{ asset('toast/css/theme.css') }}" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">

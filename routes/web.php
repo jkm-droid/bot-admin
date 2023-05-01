@@ -34,6 +34,7 @@ Route::name('keyword.')->group(function (){
     Route::post('create-keyword', [KeywordController::class, 'createKeyword'])->name('add.new_keyword');
     Route::get('keywords/index', [KeywordController::class, 'getKeywords'])->name('index');
     Route::delete('keyword/delete/{keywordId}', [KeywordController::class, 'deleteKeyword'])->name('delete');
+    Route::post('delete/batch-keywords', [KeywordController::class, 'deleteBatchKeywords'])->name('delete.batch');
 });
 
 Route::name('subreddit.')->group(function (){

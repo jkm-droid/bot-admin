@@ -53,4 +53,25 @@ class KeywordService
             ->route('keyword.index')
             ->with('success', 'Keyword deleted successfully');
     }
+
+    public function batchDeleteKeywords($request)
+    {
+        $ids = $request['keywordIds'];
+        if (count($ids) > 0){
+            foreach ($ids as $id){
+                $keyword = Keyword::where('id',$id)->first();
+                $keyword->delete();
+            }
+
+            return response()->json([
+                'status' => 200,
+                'message' => "deleted successfully"
+            ]);
+        }
+
+        return response()->json([
+            'status' => 500,
+            'message' => "an error occurred"
+        ]);
+    }
 }

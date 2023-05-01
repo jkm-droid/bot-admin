@@ -31,7 +31,7 @@
                     <form action="{{ route("reply.delete", $reply->id) }}" method="POST">
                         @csrf
                         @method('DELETE')
-                        <input type="submit" name="delete_$reply" value="delete">
+                        <input type="submit" name="delete_reply" value="delete">
                     </form>
                 </td>
             </tr>
