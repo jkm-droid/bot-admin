@@ -12,7 +12,7 @@
     </div>
 
     <div class="col-md-12">
-        <form action="{{ route('bot.create') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('bot.create.new_bot') }}" method="POST" enctype="multipart/form-data">
 
             @csrf
 

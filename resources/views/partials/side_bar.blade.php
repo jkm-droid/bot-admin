@@ -58,6 +58,22 @@
         </div>
     </li>
 
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Reddit"
+           aria-expanded="true" aria-controls="collapseTwo">
+            <i class="fas fa-fw fa-coins"></i>
+            <span>Reddit</span>
+        </a>
+        <div id="Reddit" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Action</h6>
+                <a class="collapse-item" href="{{ route('subreddit.create.form') }}">Add Subreddit</a>
+                <a class="collapse-item" href="{{ route('subreddit.index') }}">View Subreddits</a>
+                <hr class="sidebar-divider">
+            </div>
+        </div>
+    </li>
+
     <!-- Divider -->
     <hr class="sidebar-divider">
 
@@ -65,7 +81,7 @@
         <img class="sidebar-card-illustration mb-2"
              src="/profile_pictures/{{ \Illuminate\Support\Facades\Auth::guard('admin')->user()->profile_url }}"
              alt="...">
-        <p class="text-center mb-2"><strong>Stawika Investment</strong> is packed with premium features, components, and more!</p>
+        <p class="text-center mb-2"><strong>Bot Admin</strong></p>
         <a class="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">
             {{\Illuminate\Support\Facades\Auth::guard('admin')->user()->username}}
         </a>

@@ -41,6 +41,6 @@ class BotController extends Controller
 
     public function getBotParameters($botId, $botType)
     {
-        return $this->_botService->botParameters($botId,$botType);
+        return $this->_botService->botParameters($botId, $botType);
     }
 }

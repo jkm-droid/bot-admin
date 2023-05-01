@@ -53,7 +53,7 @@ class AdminAuthService
                 ->with('success', 'logged in successfully');
         }
 
-        return redirect()->route('admin.show.login')
+        return redirect('admin.show.login')
             ->with('error', 'Error, login details are incorrect');
     }
 

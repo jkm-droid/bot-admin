@@ -17,6 +17,9 @@ class CreateKeywordsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('bot_id');
             $table->string('name');
+            $table->string("type");
+            $table->boolean('is_extracted')->default(0);
+            $table->boolean('is_locked')->default(0);
             $table->timestamps();
         });
     }

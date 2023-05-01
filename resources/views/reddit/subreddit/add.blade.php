@@ -7,15 +7,14 @@
             <li class="breadcrumb-item">
                     <a href="{{ route('dashboard') }}">Dashboard</a>
             </li>
-            <li class="breadcrumb-item active" aria-current="page">Add Keyword</li>
+            <li class="breadcrumb-item active" aria-current="page">Add Subreddit</li>
         </ol>
     </div>
 
     <div class="col-md-12">
-        <form action="{{ route('keyword.add.new_keyword') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('subreddit.create') }}" method="POST" enctype="multipart/form-data">
 
             @csrf
-
             <div class="row">
                 <div class="col-md-6 mb-3">
                     <label for="exampleFormControlTextarea1" class="form-label">Bot</label>
@@ -33,16 +32,16 @@
 
             <div class="row">
                 <div class="col-md-6 mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Keyword(s)</label>
-                    <textarea type="text" name="keyword_names" class="form-control" rows="2" placeholder="Add keywords separated by comma"></textarea>
-                    @if ($errors->has('keyword_names'))
-                        <div class="text-danger form-text"><small>{{ $errors->first('keyword_names') }}</small></div>
+                    <label for="exampleFormControlInput1" class="form-label">Sub Reddit(s)</label>
+                    <textarea type="text" name="sub_reddits" class="form-control" rows="2" placeholder="Add sub reddits separated by comma"></textarea>
+                    @if ($errors->has('sub_reddits'))
+                        <div class="text-danger form-text"><small>{{ $errors->first('sub_reddits') }}</small></div>
                     @endif
                 </div>
             </div>
 
 
-            <button type="submit" class="btn btn-secondary">Add Keyword(s)</button>
+            <button type="submit" class="btn btn-secondary">Add Subreddit(s)</button>
         </form>
     </div>
 @endsection

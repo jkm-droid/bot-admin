@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Reddit\SubRedditController;
 use App\Http\Controllers\Shared\BotController;
 use App\Http\Controllers\Shared\KeywordController;
 use Illuminate\Support\Facades\Route;
@@ -21,7 +22,7 @@ Route::get('/', function () {
 
 Route::name('bot.')->group(function (){
     Route::get('create/bot', [BotController::class, 'showBotCreationPage'])->name('create.form');
-    Route::post('create', [BotController::class, 'createBot'])->name('create');
+    Route::post('create-bot', [BotController::class, 'createBot'])->name('create.new_bot');
     Route::get('bots/index', [BotController::class, 'getBots'])->name('index');
     Route::delete('bot/delete/{botId}', [BotController::class, 'deleteBot'])->name('delete');
     Route::get('bot/{id}/parameters/{type}', [BotController::class, 'getBotParameters'])->name('parameters');
@@ -29,7 +30,14 @@ Route::name('bot.')->group(function (){
 
 Route::name('keyword.')->group(function (){
     Route::get('create/keyword', [KeywordController::class, 'showKeywordCreationPage'])->name('create.form');
-    Route::post('create', [KeywordController::class, 'createKeyword'])->name('create');
+    Route::post('create-keyword', [KeywordController::class, 'createKeyword'])->name('add.new_keyword');
     Route::get('keywords/index', [KeywordController::class, 'getKeywords'])->name('index');
     Route::delete('keyword/delete/{keywordId}', [KeywordController::class, 'deleteKeyword'])->name('delete');
+});
+
+Route::name('subreddit.')->group(function (){
+    Route::get('create/subreddit', [SubRedditController::class, 'subredditCreationPage'])->name('create.form');
+    Route::post('create-sub-reddit', [SubRedditController::class, 'createSubreddit'])->name('create');
+    Route::get('subreddits/index', [SubRedditController::class, 'getSubreddits'])->name('index');
+    Route::delete('subreddit/delete/{subredditId}', [SubRedditController::class, 'deleteSubreddits'])->name('delete');
 });

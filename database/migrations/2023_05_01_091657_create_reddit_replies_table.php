@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddIsInitializedFieldToBotsTable extends Migration
+class CreateRedditRepliesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,9 @@ class AddIsInitializedFieldToBotsTable extends Migration
      */
     public function up()
     {
-        Schema::table('bots', function (Blueprint $table) {
-            $table->boolean('is_initialized')->default(0);
+        Schema::create('reddit_replies', function (Blueprint $table) {
+            $table->id();
+            $table->timestamps();
         });
     }
 
@@ -25,8 +26,6 @@ class AddIsInitializedFieldToBotsTable extends Migration
      */
     public function down()
     {
-        Schema::table('bots', function (Blueprint $table) {
-            $table->dropColumn("is_initialized");
-        });
+        Schema::dropIfExists('reddit_replies');
     }
 }
