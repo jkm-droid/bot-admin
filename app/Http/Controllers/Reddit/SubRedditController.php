@@ -34,8 +34,8 @@ class SubRedditController extends Controller
         return $this->_subredditService->getAllSubreddits();
     }
 
-    public function deleteSubreddits($keywordId)
+    public function deleteSubreddits($subredditId)
     {
-        return $this->_subredditService->deleteSubreddit($keywordId);
+        return $this->_subredditService->deleteSubreddit($subredditId);
     }
 }

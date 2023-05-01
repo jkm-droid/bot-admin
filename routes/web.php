@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Reddit\RedditReplyController;
 use App\Http\Controllers\Reddit\SubRedditController;
 use App\Http\Controllers\Shared\BotController;
 use App\Http\Controllers\Shared\KeywordController;
@@ -40,4 +41,11 @@ Route::name('subreddit.')->group(function (){
     Route::post('create-sub-reddit', [SubRedditController::class, 'createSubreddit'])->name('create');
     Route::get('subreddits/index', [SubRedditController::class, 'getSubreddits'])->name('index');
     Route::delete('subreddit/delete/{subredditId}', [SubRedditController::class, 'deleteSubreddits'])->name('delete');
+});
+
+Route::name('reply.')->group(function (){
+    Route::get('create/reddit/reply', [RedditReplyController::class, 'replyCreationPage'])->name('create.form');
+    Route::post('create-reddit-reply', [RedditReplyController::class, 'createRedditReply'])->name('create');
+    Route::get('reddit/replies/index', [RedditReplyController::class, 'getRedditReplies'])->name('index');
+    Route::delete('reddit/delete/{replyId}', [RedditReplyController::class, 'deleteReply'])->name('delete');
 });

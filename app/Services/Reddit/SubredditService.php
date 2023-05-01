@@ -22,7 +22,6 @@ class SubredditService
         ]);
 
         $bot_id = trim($request['bot_id']);
-        $bot = Bot::where('id', $bot_id)->first();
         $subreddits = explode(',',trim($request['sub_reddits']));
 
         foreach ($subreddits as $subreddit) {

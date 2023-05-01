@@ -69,7 +69,9 @@
                 <h6 class="collapse-header">Action</h6>
                 <a class="collapse-item" href="{{ route('subreddit.create.form') }}">Add Subreddit</a>
                 <a class="collapse-item" href="{{ route('subreddit.index') }}">View Subreddits</a>
-                <hr class="sidebar-divider">
+                <hr class="text-danger mt-0 mb-0">
+                <a class="collapse-item" href="{{ route('reply.create.form') }}">Add Reply</a>
+                <a class="collapse-item" href="{{ route('reply.index') }}">View Replies</a>
             </div>
         </div>
     </li>

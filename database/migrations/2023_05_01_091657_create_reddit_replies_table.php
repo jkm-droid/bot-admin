@@ -15,6 +15,10 @@ class CreateRedditRepliesTable extends Migration
     {
         Schema::create('reddit_replies', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('bot_id');
+            $table->string('description');
+            $table->boolean('is_replied')->default(0);
+            $table->boolean('is_upvoted')->default(0);
             $table->timestamps();
         });
     }

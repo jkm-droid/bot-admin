@@ -48,6 +48,16 @@ class Bot extends Model
     }
 
     /**
+     * Get the reddit replies owned by this bot
+     *
+     * @return HasMany
+     */
+    public function replies()
+    {
+        return $this->hasMany(RedditReply::class);
+    }
+
+    /**
      * Get the submissions owned by this bot
      *
      * @return HasMany
