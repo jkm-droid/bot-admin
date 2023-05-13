@@ -28,7 +28,7 @@ class KeywordService
         foreach ($keywords as $keyword) {
             $dbKeyword = new Keyword();
             $dbKeyword->bot_id = $bot_id;
-            $dbKeyword->name = $keyword;
+            $dbKeyword->name = trim($keyword);
             $dbKeyword->type = $bot->type;
 
             $dbKeyword->save();

@@ -27,7 +27,7 @@ class SubredditService
         foreach ($subreddits as $subreddit) {
             $dbSubreddit = new SubReddit();
             $dbSubreddit->bot_id = $bot_id;
-            $dbSubreddit->name = $subreddit;
+            $dbSubreddit->name = trim($subreddit);
 
             $dbSubreddit->save();
         }

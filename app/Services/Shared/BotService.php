@@ -15,7 +15,7 @@ class BotService
         ]);
 
         $bot = new Bot();
-        $bot->bot_name = $request['bot_name'];
+        $bot->bot_name = str_replace(' ','-',trim($request['bot_name']));
         $bot->type = $request['type'];
         $bot->is_active = true;
         $bot->user_id = 2;

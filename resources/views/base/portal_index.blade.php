@@ -110,10 +110,6 @@
 <!-- Page level plugins -->
 <script src="{{ asset('admin-assets/vendor/chart.js/Chart.min.js') }}"></script>
 
-<!-- Page level custom scripts -->
-{{--<script src="{{ asset('admin-assets/js/demo/chart-area-demo.js') }}"></script>--}}
-{{--<script src="{{ asset('admin-assets/js/demo/chart-pie-demo.js') }}"></script>--}}
-
 <!-- summernote -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.js"></script>
 <link rel="stylesheet" href="{{ asset('admin-assets/summernote/summernote-bs4.min.css') }}">
